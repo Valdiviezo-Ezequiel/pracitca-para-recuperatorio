@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Programación I | Parcial 2 | Valdiviezo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="styles.css" />
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Programación I | Parcial 2 | Valdiviezo | Mi carrito</h1>
+        </header>
+        <main>
+            <div id="minicarrito">
+                <p><span id="cantidadProductos">0</span> ítems agregados</p>
+                <p>$<span id="cantidadTotalPrecio">0</span> es el total</p>
+                <!-- <p>Filtrar por <a href="#">Categoría 1</a> | <a href="#">Categoría 2</a> | <a href="#">Categoría 3</a></p> -->
+                <label for="categorias-ropa">Categorias:</label>
+                <select name="categorias" id="categorias-ropa">
+                    <option value="">--Elija una categoria--</option>
+                    <option value="remeras">Remeras</option>
+                    <option value="pantalones">Pantalones</option>
+                    <option value="zapatillas">Zapatillas</option>
+                    <option value="todas">Todas</option>
+                </select>
+                <button onclick="abrirCarrito()">Ver carrito</button>
+            </div>
+            <h2>Productos</h2>
+
+            <div id="productos">
+
+            <!--
+                <div>
+                    <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+                    <div>
+                        <h3>Producto</h3>
+                        <p>Descripción del producto<p>
+                        <p>Precio: $0</p>
+                        <p>Categoría</p>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+            -->
+            </div>
+            
+
+            <!-- Generar el contenido del div#productos dinámicamente -->
+            <!-- Ejemplo de como armar el catalogo de productos
+            <div id="productos">
+                <div>
+                    <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+                    <div>
+                        <h3>Producto</h3>
+                        <p>Descripción del producto</h3>
+                        <p>Precio: $<span>0</span></p>
+                        <p>Categoría</p>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+                    <div>
+                        <h3>Producto</h3>
+                        <p>Descripción del producto</h3>
+                        <p>Precio: $<span>0</span></p>
+                        <p>Categoría</p>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+                    <div>
+                        <h3>Producto</h3>
+                        <p>Descripción del producto</h3>
+                        <p>Precio: $<span>0</span></p>
+                        <p>Categoría</p>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+                    <div>
+                        <h3>Producto</h3>
+                        <p>Descripción del producto</h3>
+                        <p>Precio: $<span>0</span></p>
+                        <p>Categoría</p>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+                    <div>
+                        <h3>Producto</h3>
+                        <p>Descripción del producto</h3>
+                        <p>Precio: $<span>0</span></p>
+                        <p>Categoría</p>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+                    <div>
+                        <h3>Producto</h3>
+                        <p>Descripción del producto</h3>
+                        <p>Precio: $<span>0</span></p>
+                        <p>Categoría</p>
+                        <button>Agregar</button>
+                    </div>
+                </div>
+            </div>
+        -->
+        </main>
+        <footer>
+            <ul>
+                <li>Profesor Fabrizio Carlassara</li>
+                <li>
+                    <a href="mailto:fabrizio.carlassara@davinci.edu.ar?subject=P1%20-%20Consulta%20-%20DW2[M|T|N][A|B]%20-%20Apellido,%20Nombre" target="_blank">fabrizio.carlassara@davinci.edu.ar</a>
+                </li>
+                <li>Programación 1</li>
+            </ul>
+        </footer>
+
+        <!-- Generar el div#modalProducto y su contenido dinámicamente
+        <div class="modal" id="modalProducto">
+            <a class="cerrar" href="javascript:void(0)">X</a>
+            <img src="producto-de-ejemplo.jpg" alt="Nombre del producto" />
+            <h3>Producto</h3>
+            <p>Descripción</p>
+            <p>Precio: <span>$0</span></p>
+            <p>Categoría</p>
+            <button>Agregar</button>
+        </div> -->
+
+        <!-- Generar el div#modalCarrito y su contenido dinámicamente-->
+        <div class="modal" id="modalCarrito">
+            <a class="cerrar" onclick="cerrarCarrito()" href="javascript:void(0)">X</a>
+            <p>Items: <span id="items">3</span> - Total: <span id="total">$0</span></p>
+            <hr />
+            <ul>
+                <li>Nombre del producto <span>$0</span> <span>0 items</span> <a href="#">Eliminar</a></li>
+                <li>Nombre del producto <span>$0</span> <span>0 items</span> <a href="#">Eliminar</a></li>
+                <li>Nombre del producto <span>$0</span> <span>0 items</span> <a href="#">Eliminar</a></li>
+            </ul>
+            <button onclick="a()">Vaciar</button>
+            <button onclick="b()">Ir al checkout</button>
+        </div> 
+        <script src="carrito.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
